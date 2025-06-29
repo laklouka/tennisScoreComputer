@@ -1,5 +1,6 @@
 package com.example.tennisGame.controllers;
 
+import com.example.tennisGame.services.GameState;
 import com.example.tennisGame.services.TennisScoreService;
 import com.example.tennisGame.services.TennisScoreService.TennisScore;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +28,7 @@ public class TennisController {
         List<String> results = new ArrayList<>();
         TennisScore score = new TennisScore();
         for (char c : sequence.trim().toUpperCase().toCharArray()) {
-            if (score.state == TennisScoreService.GameState.WIN_A || score.state == TennisScoreService.GameState.WIN_B)
+            if (score.state == GameState.WIN_A || score.state == GameState.WIN_B)
                 break;
             service.updateScore(score, c);
             String s = service.getScoreString(score);

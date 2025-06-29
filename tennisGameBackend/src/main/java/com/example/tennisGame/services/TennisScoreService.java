@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 public class TennisScoreService {
     private static final int[] scoreTable = {0, 15, 30, 40};
 
-    public enum GameState { ONGOING, DEUCE, ADV_A, ADV_B, WIN_A, WIN_B }
-
     public static class TennisScore {
         public int pointsA = 0;
         public int pointsB = 0;
@@ -50,11 +48,11 @@ public class TennisScoreService {
 
     public String getScoreString(TennisScore score) {
         switch (score.state) {
-            case WIN_A: return "Player A wins the game";
-            case WIN_B: return "Player B wins the game";
-            case DEUCE: return "Deuce";
-            case ADV_A: return "Advantage Player A";
-            case ADV_B: return "Advantage Player B";
+            case WIN_A: return GameState.WIN_A.getMessage();
+            case WIN_B: return GameState.WIN_B.getMessage();
+            case DEUCE: return GameState.DEUCE.getMessage();
+            case ADV_A: return GameState.ADV_A.getMessage();
+            case ADV_B: return GameState.ADV_B.getMessage();
             default:
                 return String.format("Player A : %d / Player B : %d",
                         scoreTable[Math.min(score.pointsA, 3)], scoreTable[Math.min(score.pointsB, 3)]);
