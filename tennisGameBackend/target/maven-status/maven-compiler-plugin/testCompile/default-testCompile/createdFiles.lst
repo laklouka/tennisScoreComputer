@@ -1,0 +1,3 @@
+services\TennisScoreServiceTest.class
+controllers\TennisControllerIntegrationTest.class
+controllers\TennisGameApplicationTest.class
