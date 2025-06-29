@@ -2,5 +2,5 @@
 FROM openjdk:21-ea
 VOLUME /tmp
 EXPOSE 8080
-COPY target/tennisGameBackend-1.0-SNAPSHOT.jar tennis-app.jar
-ENTRYPOINT ["java", "-jar", "tennis-app.jar"]
+COPY target/tennisGameBackend-1.0-SNAPSHOT.jar tennisGameBackend.jar
+ENTRYPOINT ["java", "-jar", "tennisGameBackend.jar"]
