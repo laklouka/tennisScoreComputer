@@ -26,13 +26,12 @@ function TennisScore() {
             setScores(data);
         } catch (err) {
             console.error("Fetch error:", err.message);
-            // Optionally display error to user
         }
     };
 
     return (
         <div>
-            <h1>Tennis Score Kata</h1>
+            <h1>Tennis Score Computer</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
