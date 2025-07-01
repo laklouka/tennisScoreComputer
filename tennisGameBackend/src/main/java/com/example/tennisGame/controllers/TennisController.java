@@ -5,16 +5,14 @@ import com.example.tennisGame.services.TennisScoreService;
 import com.example.tennisGame.services.TennisScoreService.TennisScore;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/tennis")
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 public class TennisController {
 
